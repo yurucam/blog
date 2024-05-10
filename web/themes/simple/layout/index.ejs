@@ -1,0 +1,30 @@
+<% var posts=site.posts.sort('date', 'desc' ).limit(5); %>
+    <ul class="posts">
+
+        <% posts.forEach(post=> { %>
+            <li class="post">
+                <a href="<%- url_for(post.path) %>">
+                    <span>
+                        <%= date(post.date, 'YYYY MMMM Do dddd, a hh:mm:ss' ) %>
+                    </span>
+
+                    <h1>
+                        <%- post.title %>
+                    </h1>
+
+                    <p>
+                        <%- post.subtitle %>
+                    </p>
+                </a>
+            </li>
+            <% }) %>
+
+    </ul>
+
+    <div class="navigator">
+        <div class="navigator_button">
+            <a href="<%- url_for('/archives') %>">
+                모든 글 보기
+            </a>
+        </div>
+    </div>

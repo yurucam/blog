@@ -1,0 +1,46 @@
+theme: simple
+
+title: "📷 YURUCAM"
+subtitle: "Laid-Back Photographer"
+keywords: "laid-back, photo, photography, travel, travelogue, diary, journal, blog, yuru, cam, yurucam"
+author: "JeongHyeon Kim"
+language: "ko"
+timezone: "Asia/Seoul"
+
+url: "https://blog.yuru.cam"
+root: "/"
+permalink: :category/:title/
+per_page: 7
+
+external_link:
+  enable: true # Open external links in new tab
+  field: site # Apply to the whole site
+  exclude: ""
+
+highlight:
+  enable: true
+  hljs: true
+  line_number: false
+  wrap: false
+
+sitemap:
+  path:
+    - sitemap.xml
+    - sitemap.txt
+  rel: false
+  tags: false
+  categories: false
+
+robotstxt:
+  useragent: "*"
+  allow:
+    - /
+  sitemap: https://blog.yuru.cam/sitemap.xml
+
+feed:
+  type: rss2
+  path: rss2.xml
+  limit: 20
+
+nofollow:
+  enable: true

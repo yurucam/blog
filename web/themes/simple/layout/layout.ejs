@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="utf-8">
+    <meta content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=1" name="viewport">
+    <meta name="title" content="<%= page.title %>">
+    <meta name="description" content="<%= page.subtitle %>">
+    <meta name="author" content="yurucam">
+    <meta name="robots" content="all" >
+    <!-- https://hexo.io/docs/variables.html#Page-Variables -->
+    <meta property="og:url" content="<%= page.permalink ?? config.url %>" />
+    <meta property="og:image" content="<%= config.url %>/opengraph.png" />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="<%= page.title ?? "📷YURUCAM" %>" />
+    <meta property="og:description" content="<%= page.subtitle ?? "Laid-Back Photographer" %>" />
+    <meta name="twitter:url" content="<%= page.permalink ?? config.url %>" />
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:title" content="<%= page.title ?? "📷YURUCAM" %>" />
+    <meta name="twitter:description" content="<%= page.subtitle ?? "Laid-Back Photographer" %>" />
+    <meta name="twitter:image" content="<%= config.url %>/opengraph.png" />
+    <link rel="canonical" href="<%= page.permalink ?? config.url %>" />
+
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
+    <link rel="manifest" href="/site.webmanifest" />
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="/markdown.css" />
+
+    <!-- CSS for code highlighting -->
+    <link rel="stylesheet" href="/stackoverflow-dark.min.css">
+    <script src="/highlight.min.js"></script>
+    <script src="/highlight-language-go.min.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Barlow:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Gothic+A1&display=swap" rel="stylesheet">
+
+    <title>
+        <% if (page.title) { %>
+            <%= page.title %> |
+                <% } %>
+                    <%= config.title %>
+    </title>
+
+    <%- css('style') %>
+</head>
+
+<body>
+
+    <header>
+        <a href="<%- url_for('/') %>">
+            <h1>
+                <%= config.title %>
+            </h1>
+        </a>
+    </header>
+
+    <main>
+        <%- body %>
+    </main>
+
+    <footer>
+        <ul>
+            <li> <a href="mailto:help@yuru.cam">📩 궁금한 점이 있으면 이메일을 보내주세요</a> </li>
+            <li> <a href="<%- url_for('/rss2.xml') %>">📨 RSS</a> </li>
+            <li> <a href="https://github.com/yurucam/exif-frame">🖼️ EXIF 프레임</a> </li>
+        </ul>
+    </footer>
+</body>
+
+</html>

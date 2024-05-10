@@ -1,0 +1,37 @@
+<ul class="posts">
+  <% page.posts.each(post => { %>
+    <li class="post">
+      <a href="<%- url_for(post.path) %>">
+        <span>
+          <%= date(post.date, 'YYYY MMMM Do dddd, a hh:mm:ss' ) %>
+        </span>
+
+        <h1>
+          <%- post.title %>
+        </h1>
+
+        <p>
+          <%- post.subtitle %>
+        </p>
+      </a>
+    </li>
+    <% }) %>
+</ul>
+
+<div class="navigator">
+  <div class="navigator_button">
+    <% if (page.prev){ %>
+      <a href="<%- url_for(page.prev_link) %>">
+        이전
+      </a>
+      <% } %>
+  </div>
+
+  <div class="navigator_button">
+    <% if (page.next){ %>
+      <a href="<%- url_for(page.next_link) %>">
+        다음
+      </a>
+      <% } %>
+  </div>
+</div>
