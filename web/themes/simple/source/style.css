@@ -147,10 +147,28 @@ li.post p {
   font-family: "Barlow", "Helvetica", "Arial", "Noto Sans CJK KR", "Noto Sans KR", "Apple SD Gothic Neo", "Malgun Gothic", sans-serif;
 }
 
-.navigator {
-  display: flex;
-  justify-content: space-between;
-  margin-top: 2rem;
+@media (min-width: 1024px) {
+  .navigator {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 2rem;
+  }
+}
+
+@media (max-width: 1023px) {
+  .navigator {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 2rem;
+  }
+}
+
+.navigator_button {
+  margin-bottom: 2rem;
 }
 
 .navigator_button a {
