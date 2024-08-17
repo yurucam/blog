@@ -25,18 +25,6 @@ runs:
       with:
         node-version: 18
 
-    - name: Cache Dependencies
-      id: cache
-      uses: actions/cache@main
-      with:
-        key: ${{ hashFiles(format('{0}/{1}', inputs.working-directory, 'package-lock.json')) }}
-        path: ${{ format('{0}/{1}', inputs.working-directory, 'node_modules') }}
-
-    - name: Install Dependencies
-      if: steps.cache.outputs.cache-hit != 'true'
-      shell: bash
-      run: npm ci
-
     - name: Build
       shell: bash
       run: npx no-css-blog
