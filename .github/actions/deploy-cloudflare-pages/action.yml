@@ -5,10 +5,6 @@ inputs:
     required: true
     type: string
 
-  working-directory:
-    required: true
-    type: string
-
   output-directory:
     required: true
     type: string
@@ -40,17 +36,14 @@ runs:
       if: steps.cache.outputs.cache-hit != 'true'
       shell: bash
       run: npm ci
-      working-directory: ${{ inputs.working-directory }}
 
     - name: Build
       shell: bash
-      run: npm run build
-      working-directory: ${{ inputs.working-directory }}
+      run: npx no-css-blog
 
     - name: Deploy to Cloudflare Pages
       uses: cloudflare/wrangler-action@v3
       with:
         accountId: ${{ inputs.account-id }}
         apiToken: ${{ inputs.api-token }}
-        workingDirectory: ${{ inputs.working-directory }}
         command: pages deploy ${{ inputs.output-directory }} --project-name=${{ inputs.project-name }}
