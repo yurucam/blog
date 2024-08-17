@@ -18,3 +18,22 @@
 ![ebay](./images/ebay.webp)
 
 힙스터 기질이 있는건지.. 옛날 웹사이트 디자인에 되게 끌린다. 정겹기도 하고.
+
+---
+
+## 구조
+
+[no-css-blog](https://www.npmjs.com/package/no-css-blog) CLI 도구를 만들었다. 자세한 동작은 다음과 같다.
+
+배포는 아래와 같은 순서로 진행이 된다.
+
+### 특징
+
+1. JS, CSS를 사용하지 않았다. HTML 하나면 충분하다.
+2. Cloudflare을 사용하여 서버 비용 제로에, 통신 병목까지 줄였다.
+3. 마크다운 문서를 HTML로 변환하는 방식을 택하여 글 작성이 용이하다.
+4. 모든 이미지는 용량 최적화를 위해 [exif-frame](https://github.com/yurucam/exif-frame)을 사용하여 [WebP](https://ko.wikipedia.org/wiki/WebP) 형식으로 변환한다.
+
+---
+
+## 마치며
